@@ -6,7 +6,7 @@ import ethLogo from './assets/ethlogo.png';
 import { ethers } from 'ethers';
 import contractAbi from './utils/Domains.json'
 import { networks } from './utils/networks';
-import { mnemonicToSeed } from 'ethers/lib/utils';
+import LoadingIndicator from './components/LoadingIndicator';
 
 // Constants
 const TWITTER_HANDLE = 'kushagra_shiv';
@@ -22,6 +22,7 @@ const App = () => {
 	const [loading, setLoading] = useState(false);
 	const [editing, setEditing] = useState(false);
 	const [mints, setMints] = useState([]);
+	const [isLoading, setIsLoading] = useState(false);
 
 	const connectWallet = async () => {
 		try {
@@ -105,6 +106,7 @@ const App = () => {
 			alert("Domain must be at least 3 characters long");
 			return;
 		}
+		setIsLoading(true);
 		const price = domain.length === 3 ? "0.5" : domain.length === 4 ? "0.3" : "0.1";
 		console.log("Minting domain", domain, "with price", price);
 		try {
@@ -136,11 +138,13 @@ const App = () => {
 		} catch (err) {
 			console.log(err);
 		}
+		setIsLoading(false);
 	}
 
 	const updateDomain = async () => {
 		if (!record || !domain) { return }
 		setLoading(true);
+		setIsLoading(true);
 		console.log("Updating domain", domain, "with record", record);
 		try {
 			const { ethereum } = window;
@@ -161,6 +165,7 @@ const App = () => {
 			console.log(err);
 		}
 		setLoading(false);
+		setIsLoading(false);
 	}
 
 	const fetchMints = async () => {
@@ -310,6 +315,7 @@ const App = () => {
 				</div>
 				{!currentAccount && renderNotConnectedContainer()}
 				{currentAccount && renderInputForm()}
+				<div>{isLoading ? <LoadingIndicator /> : ""}</div>
 				{mints && renderMints()}
 				<div className="footer-container">
 					<img alt="Twitter Logo" className="twitter-logo" src={twitterLogo} />

@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/monkey_domain_service/static/css/main.36fade02.css",
+    "main.js": "/monkey_domain_service/static/js/main.55139d3b.js",
+    "static/media/twitter-logo.svg": "/monkey_domain_service/static/media/twitter-logo.a8a752547c2913d8bc15e5df109748a6.svg",
+    "static/media/polygonlogo.png": "/monkey_domain_service/static/media/polygonlogo.6cde40a9b9119621eb2b.png",
+    "index.html": "/monkey_domain_service/index.html",
+    "main.36fade02.css.map": "/monkey_domain_service/static/css/main.36fade02.css.map",
+    "main.55139d3b.js.map": "/monkey_domain_service/static/js/main.55139d3b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.36fade02.css",
+    "static/js/main.55139d3b.js"
+  ]
+}

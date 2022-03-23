@@ -11,7 +11,7 @@ p {
 
 .container {
   height: 100%;
-  background-color: #181818;
+  background: linear-gradient(to right, #20002c, #cbb4d4);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -42,7 +42,7 @@ header{
 
 .left{
   text-align: left;
-  margin-left: 10%;
+  margin-left: 2%;
 }
 
 .logo{
@@ -53,11 +53,11 @@ header{
 
 .right{
   display: flex;
-  background: black;
+  background: linear-gradient(to right, #bbd2c5, #536976, #292e49);
   border-radius: 16px;
   padding: 12px 20px;
   height: 99%;
-  margin-right: 10%;
+  margin-right: 2%;
   margin-top: 10px;
 }
 
@@ -104,7 +104,7 @@ header{
 }
 
 .mint-button {
-  background: -webkit-linear-gradient(left, #a200d6, #ff6fdf);
+  background: linear-gradient(to right, #ff0099, #493240);
   font-size: 18px;
   background-size: 200% 200%;
   animation: gradient-animation 4s ease infinite;
